@@ -1,0 +1,20 @@
+rules:
+  - id: sql-fstring-execute
+    languages: [python]
+    severity: ERROR
+    message: SQL construit cu f-string (CWE-89). Folosește query parametrizat.
+    pattern: $CONN.execute(f"...", ...)
+
+  - id: subprocess-shell-true
+    languages: [python]
+    severity: ERROR
+    message: shell=True cu input dinamic (CWE-78). Folosește o listă de argumente.
+    pattern: subprocess.run(..., shell=True, ...)
+
+  - id: yaml-unsafe-load
+    languages: [python]
+    severity: ERROR
+    message: yaml.load fără SafeLoader (CWE-502). Folosește yaml.safe_load.
+    patterns:
+      - pattern: yaml.load(...)
+      - pattern-not: yaml.load(..., Loader=yaml.SafeLoader)
