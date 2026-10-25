@@ -1,4 +1,4 @@
 # Versiuni vechi INTENȚIONAT, cu CVE-uri cunoscute (pentru Trivy / SCA)
 Flask==2.2.2
-Werkzeug==2.2.2
+Werkzeug==3.1.9
 PyYAML==5.3
